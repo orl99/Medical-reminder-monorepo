@@ -1,0 +1,27 @@
+.medical-photo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.medical-photo{
+  min-width: 280px;
+  height: 180px;
+  // margin: auto;
+  margin-top: 20px;
+}
+
+
+.medical-photo-main {
+  ion-label{
+    text-align: center;
+    margin-top:5px;
+
+  }
+
+  ion-button {
+    margin-top: 20px;
+  }
+
+}

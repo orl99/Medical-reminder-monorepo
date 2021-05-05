@@ -1,10 +1,260 @@
 {
-  
-  
   "version": 2,
-  
-  "projects": {},
+  "projects": {
+    "medical-reminder": {
+      "projectType": "application",
+      "root": "apps/medical-reminder",
+      "sourceRoot": "apps/medical-reminder/src",
+      "prefix": "orly",
+      "targets": {
+        "build": {
+          "executor": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/medical-reminder",
+            "index": "apps/medical-reminder/src/index.html",
+            "main": "apps/medical-reminder/src/main.ts",
+            "polyfills": "apps/medical-reminder/src/polyfills.ts",
+            "tsConfig": "apps/medical-reminder/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/medical-reminder/src/assets",
+              {
+                "glob": "**/*.svg",
+                "input": "node_modules/ionicons/dist/ionicons/svg",
+                "output": "./svg"
+              }
+            ],
+            "styles": [
+              "apps/medical-reminder/src/styles.scss",
+              {
+                "input": "apps/medical-reminder/src/theme/variables.scss"
+              }
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/medical-reminder/src/environments/environment.ts",
+                  "with": "apps/medical-reminder/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "medical-reminder:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "medical-reminder:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "executor": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "medical-reminder:build"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/medical-reminder/src/**/*.ts",
+              "apps/medical-reminder/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/apps/medical-reminder"
+          ],
+          "options": {
+            "jestConfig": "apps/medical-reminder/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "cap": {
+          "executor": "@nxtend/capacitor:cap",
+          "options": {
+            "cmd": "--help"
+          }
+        },
+        "add": {
+          "executor": "@nxtend/capacitor:cap",
+          "options": {
+            "cmd": "add",
+            "packageInstall": true
+          },
+          "configurations": {
+            "ios": {
+              "cmd": "add ios"
+            },
+            "android": {
+              "cmd": "add android"
+            }
+          }
+        },
+        "copy": {
+          "executor": "@nxtend/capacitor:cap",
+          "options": {
+            "cmd": "copy",
+            "packageInstall": false
+          },
+          "configurations": {
+            "ios": {
+              "cmd": "copy ios"
+            },
+            "android": {
+              "cmd": "copy android"
+            }
+          }
+        },
+        "open": {
+          "executor": "@nxtend/capacitor:cap",
+          "options": {
+            "cmd": "open",
+            "packageInstall": false
+          },
+          "configurations": {
+            "ios": {
+              "cmd": "open ios"
+            },
+            "android": {
+              "cmd": "open android"
+            }
+          }
+        },
+        "sync": {
+          "executor": "@nxtend/capacitor:cap",
+          "options": {
+            "cmd": "sync",
+            "packageInstall": true
+          },
+          "configurations": {
+            "ios": {
+              "cmd": "sync ios"
+            },
+            "android": {
+              "cmd": "sync android"
+            }
+          }
+        },
+        "update": {
+          "executor": "@nxtend/capacitor:cap",
+          "options": {
+            "cmd": "update",
+            "packageInstall": true
+          },
+          "configurations": {
+            "ios": {
+              "cmd": "update ios"
+            },
+            "android": {
+              "cmd": "update android"
+            }
+          }
+        }
+      }
+    },
+    "medical-reminder-e2e": {
+      "root": "apps/medical-reminder-e2e",
+      "sourceRoot": "apps/medical-reminder-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/medical-reminder-e2e/cypress.json",
+            "tsConfig": "apps/medical-reminder-e2e/tsconfig.e2e.json",
+            "devServerTarget": "medical-reminder:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "medical-reminder:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/medical-reminder-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      }
+    },
+    "aqua-lib": {
+      "projectType": "library",
+      "root": "libs/aqua-lib",
+      "sourceRoot": "libs/aqua-lib/src",
+      "prefix": "orly",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/aqua-lib/src/**/*.ts",
+              "libs/aqua-lib/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/aqua-lib"
+          ],
+          "options": {
+            "jestConfig": "libs/aqua-lib/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
-  }
+    "defaultCollection": "@nxtend/ionic-angular"
+  },
+  "generators": {
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
+    }
+  },
+  "defaultProject": "medical-reminder"
 }

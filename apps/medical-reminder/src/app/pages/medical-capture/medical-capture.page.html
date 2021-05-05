@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Capture medecine</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="medical-photo-main ion-padding">
+  <div class="medical-photo-container">
+    <div class="medical-photo">
+      <orly-photo-uploader></orly-photo-uploader>
+    </div>
+    <ion-label>
+      Capture una foto del medicamento junto con al fecha escrita a mano
+    </ion-label>
+  </div>
+
+  <div class="medical-measure-capture-container">
+    <ion-item>
+      <ion-label slot="start">Cantidad</ion-label>
+      <ion-select slot="end">
+        <ion-select-option>1/4</ion-select-option>
+        <ion-select-option>1/2</ion-select-option>
+        <ion-select-option>1</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </div>
+
+  <ion-button expand="block">Capturar</ion-button>
+
+</ion-content>
