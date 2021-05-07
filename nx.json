@@ -1,10 +1,10 @@
 {
-  "npmScope": "orly",
-  "affected": { "defaultBase": "master" },
   "implicitDependencies": {
     "package.json": { "dependencies": "*", "devDependencies": "*" },
     ".eslintrc.json": "*"
   },
+  "affected": { "defaultBase": "master" },
+  "npmScope": "orly",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
@@ -17,6 +17,7 @@
       "tags": [],
       "implicitDependencies": ["medical-reminder"]
     },
-    "aqua-lib": { "tags": [] }
+    "aqua-lib": { "tags": [] },
+    "medical-reminder-api": { "tags": [] }
   }
 }
