@@ -9,7 +9,10 @@
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "parserOptions": {
-        "project": ["apps/medical-reminder/tsconfig.*?.json"]
+        "project": [
+          "apps/medical-reminder/tsconfig.*?.json",
+          "apps/medical-reminder/.storybook/tsconfig.json"
+        ]
       },
       "rules": {
         "@angular-eslint/directive-selector": [

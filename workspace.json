@@ -198,6 +198,39 @@
               "cmd": "update android"
             }
           }
+        },
+        "storybook": {
+          "executor": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "port": 4400,
+            "config": {
+              "configFolder": "apps/medical-reminder/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        },
+        "build-storybook": {
+          "executor": "@nrwl/storybook:build",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "outputPath": "dist/storybook/medical-reminder",
+            "config": {
+              "configFolder": "apps/medical-reminder/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
         }
       }
     },
@@ -252,6 +285,39 @@
           "options": {
             "jestConfig": "libs/aqua-lib/jest.config.js",
             "passWithNoTests": true
+          }
+        },
+        "storybook": {
+          "executor": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "port": 4400,
+            "config": {
+              "configFolder": "libs/aqua-lib/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        },
+        "build-storybook": {
+          "executor": "@nrwl/storybook:build",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "outputPath": "dist/storybook/aqua-lib",
+            "config": {
+              "configFolder": "libs/aqua-lib/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
           }
         }
       }
@@ -310,6 +376,34 @@
           "options": {
             "jestConfig": "apps/medical-reminder-api/jest.config.js",
             "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "aqua-lib-e2e": {
+      "root": "apps/aqua-lib-e2e",
+      "sourceRoot": "apps/aqua-lib-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/aqua-lib-e2e/cypress.json",
+            "tsConfig": "apps/aqua-lib-e2e/tsconfig.e2e.json",
+            "devServerTarget": "aqua-lib:storybook"
+          },
+          "configurations": {
+            "ci": {
+              "devServerTarget": "aqua-lib:storybook:ci"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/aqua-lib-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }

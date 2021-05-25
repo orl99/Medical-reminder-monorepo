@@ -1,23 +1,55 @@
 {
   "implicitDependencies": {
-    "package.json": { "dependencies": "*", "devDependencies": "*" },
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
     ".eslintrc.json": "*"
   },
-  "affected": { "defaultBase": "master" },
+  "affected": {
+    "defaultBase": "master"
+  },
   "npmScope": "orly",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
+      "options": {
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e",
+          "build-storybook"
+        ]
+      }
     }
   },
   "projects": {
-    "medical-reminder": { "tags": [] },
+    "medical-reminder": {
+      "tags": []
+    },
     "medical-reminder-e2e": {
       "tags": [],
       "implicitDependencies": ["medical-reminder"]
     },
-    "aqua-lib": { "tags": [] },
-    "medical-reminder-api": { "tags": [] }
+    "aqua-lib": {
+      "tags": [],
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/lib/tsconfig.lib.json",
+            "project": "libs/lib/ng-package.json"
+          }
+        }
+      }
+    },
+    "medical-reminder-api": {
+      "tags": []
+    },
+    "aqua-lib-e2e": {
+      "tags": [],
+      "implicitDependencies": ["aqua-lib"]
+    }
   }
 }
