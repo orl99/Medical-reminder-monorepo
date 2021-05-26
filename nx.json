@@ -1,14 +1,9 @@
 {
   "implicitDependencies": {
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     ".eslintrc.json": "*"
   },
-  "affected": {
-    "defaultBase": "master"
-  },
+  "affected": { "defaultBase": "master" },
   "npmScope": "orly",
   "tasksRunnerOptions": {
     "default": {
@@ -25,9 +20,7 @@
     }
   },
   "projects": {
-    "medical-reminder": {
-      "tags": []
-    },
+    "medical-reminder": { "tags": [] },
     "medical-reminder-e2e": {
       "tags": [],
       "implicitDependencies": ["medical-reminder"]
@@ -44,12 +37,9 @@
         }
       }
     },
-    "medical-reminder-api": {
-      "tags": []
-    },
-    "aqua-lib-e2e": {
-      "tags": [],
-      "implicitDependencies": ["aqua-lib"]
-    }
+    "medical-reminder-api": { "tags": [] },
+    "aqua-lib-e2e": { "tags": [], "implicitDependencies": ["aqua-lib"] },
+    "aqua-lib-pro": { "tags": [] },
+    "aqua-lib-pro-2": { "tags": [] }
   }
 }

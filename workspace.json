@@ -1,8 +1,6 @@
 {
   "version": 2,
-  "cli": {
-    "defaultCollection": "@nxtend/ionic-angular"
-  },
+  "cli": { "defaultCollection": "@nxtend/ionic-angular" },
   "defaultProject": "medical-reminder",
   "generators": {
     "@nrwl/angular:application": {
@@ -16,9 +14,7 @@
       "linter": "eslint",
       "unitTestRunner": "jest"
     },
-    "@nrwl/angular:component": {
-      "style": "scss"
-    }
+    "@nrwl/angular:component": { "style": "scss" }
   },
   "projects": {
     "medical-reminder": {
@@ -46,9 +42,7 @@
             ],
             "styles": [
               "apps/medical-reminder/src/styles.scss",
-              {
-                "input": "apps/medical-reminder/src/theme/variables.scss"
-              }
+              { "input": "apps/medical-reminder/src/theme/variables.scss" }
             ],
             "scripts": []
           },
@@ -84,9 +78,7 @@
         },
         "serve": {
           "executor": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "medical-reminder:build"
-          },
+          "options": { "browserTarget": "medical-reminder:build" },
           "configurations": {
             "production": {
               "browserTarget": "medical-reminder:build:production"
@@ -95,9 +87,7 @@
         },
         "extract-i18n": {
           "executor": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "medical-reminder:build"
-          }
+          "options": { "browserTarget": "medical-reminder:build" }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
@@ -110,9 +100,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/medical-reminder"
-          ],
+          "outputs": ["coverage/apps/medical-reminder"],
           "options": {
             "jestConfig": "apps/medical-reminder/jest.config.js",
             "passWithNoTests": true
@@ -120,83 +108,46 @@
         },
         "cap": {
           "executor": "@nxtend/capacitor:cap",
-          "options": {
-            "cmd": "--help"
-          }
+          "options": { "cmd": "--help" }
         },
         "add": {
           "executor": "@nxtend/capacitor:cap",
-          "options": {
-            "cmd": "add",
-            "packageInstall": true
-          },
+          "options": { "cmd": "add", "packageInstall": true },
           "configurations": {
-            "ios": {
-              "cmd": "add ios"
-            },
-            "android": {
-              "cmd": "add android"
-            }
+            "ios": { "cmd": "add ios" },
+            "android": { "cmd": "add android" }
           }
         },
         "copy": {
           "executor": "@nxtend/capacitor:cap",
-          "options": {
-            "cmd": "copy",
-            "packageInstall": false
-          },
+          "options": { "cmd": "copy", "packageInstall": false },
           "configurations": {
-            "ios": {
-              "cmd": "copy ios"
-            },
-            "android": {
-              "cmd": "copy android"
-            }
+            "ios": { "cmd": "copy ios" },
+            "android": { "cmd": "copy android" }
           }
         },
         "open": {
           "executor": "@nxtend/capacitor:cap",
-          "options": {
-            "cmd": "open",
-            "packageInstall": false
-          },
+          "options": { "cmd": "open", "packageInstall": false },
           "configurations": {
-            "ios": {
-              "cmd": "open ios"
-            },
-            "android": {
-              "cmd": "open android"
-            }
+            "ios": { "cmd": "open ios" },
+            "android": { "cmd": "open android" }
           }
         },
         "sync": {
           "executor": "@nxtend/capacitor:cap",
-          "options": {
-            "cmd": "sync",
-            "packageInstall": true
-          },
+          "options": { "cmd": "sync", "packageInstall": true },
           "configurations": {
-            "ios": {
-              "cmd": "sync ios"
-            },
-            "android": {
-              "cmd": "sync android"
-            }
+            "ios": { "cmd": "sync ios" },
+            "android": { "cmd": "sync android" }
           }
         },
         "update": {
           "executor": "@nxtend/capacitor:cap",
-          "options": {
-            "cmd": "update",
-            "packageInstall": true
-          },
+          "options": { "cmd": "update", "packageInstall": true },
           "configurations": {
-            "ios": {
-              "cmd": "update ios"
-            },
-            "android": {
-              "cmd": "update android"
-            }
+            "ios": { "cmd": "update ios" },
+            "android": { "cmd": "update android" }
           }
         },
         "storybook": {
@@ -204,33 +155,19 @@
           "options": {
             "uiFramework": "@storybook/angular",
             "port": 4400,
-            "config": {
-              "configFolder": "apps/medical-reminder/.storybook"
-            }
+            "config": { "configFolder": "apps/medical-reminder/.storybook" }
           },
-          "configurations": {
-            "ci": {
-              "quiet": true
-            }
-          }
+          "configurations": { "ci": { "quiet": true } }
         },
         "build-storybook": {
           "executor": "@nrwl/storybook:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "uiFramework": "@storybook/angular",
             "outputPath": "dist/storybook/medical-reminder",
-            "config": {
-              "configFolder": "apps/medical-reminder/.storybook"
-            }
+            "config": { "configFolder": "apps/medical-reminder/.storybook" }
           },
-          "configurations": {
-            "ci": {
-              "quiet": true
-            }
-          }
+          "configurations": { "ci": { "quiet": true } }
         }
       }
     },
@@ -255,9 +192,7 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/medical-reminder-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/medical-reminder-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -279,9 +214,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/aqua-lib"
-          ],
+          "outputs": ["coverage/libs/aqua-lib"],
           "options": {
             "jestConfig": "libs/aqua-lib/jest.config.js",
             "passWithNoTests": true
@@ -292,33 +225,19 @@
           "options": {
             "uiFramework": "@storybook/angular",
             "port": 4400,
-            "config": {
-              "configFolder": "libs/aqua-lib/.storybook"
-            }
+            "config": { "configFolder": "libs/aqua-lib/.storybook" }
           },
-          "configurations": {
-            "ci": {
-              "quiet": true
-            }
-          }
+          "configurations": { "ci": { "quiet": true } }
         },
         "build-storybook": {
           "executor": "@nrwl/storybook:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "uiFramework": "@storybook/angular",
             "outputPath": "dist/storybook/aqua-lib",
-            "config": {
-              "configFolder": "libs/aqua-lib/.storybook"
-            }
+            "config": { "configFolder": "libs/aqua-lib/.storybook" }
           },
-          "configurations": {
-            "ci": {
-              "quiet": true
-            }
-          }
+          "configurations": { "ci": { "quiet": true } }
         }
       }
     },
@@ -329,16 +248,12 @@
       "targets": {
         "build": {
           "executor": "@nrwl/node:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/medical-reminder-api",
             "main": "apps/medical-reminder-api/src/main.ts",
             "tsConfig": "apps/medical-reminder-api/tsconfig.app.json",
-            "assets": [
-              "apps/medical-reminder-api/src/assets"
-            ]
+            "assets": ["apps/medical-reminder-api/src/assets"]
           },
           "configurations": {
             "production": {
@@ -356,23 +271,17 @@
         },
         "serve": {
           "executor": "@nrwl/node:execute",
-          "options": {
-            "buildTarget": "medical-reminder-api:build"
-          }
+          "options": { "buildTarget": "medical-reminder-api:build" }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/medical-reminder-api/**/*.ts"
-            ]
+            "lintFilePatterns": ["apps/medical-reminder-api/**/*.ts"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/medical-reminder-api"
-          ],
+          "outputs": ["coverage/apps/medical-reminder-api"],
           "options": {
             "jestConfig": "apps/medical-reminder-api/jest.config.js",
             "passWithNoTests": true
@@ -393,17 +302,59 @@
             "devServerTarget": "aqua-lib:storybook"
           },
           "configurations": {
-            "ci": {
-              "devServerTarget": "aqua-lib:storybook:ci"
-            }
+            "ci": { "devServerTarget": "aqua-lib:storybook:ci" }
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
+          "options": { "lintFilePatterns": ["apps/aqua-lib-e2e/**/*.{js,ts}"] }
+        }
+      }
+    },
+    "aqua-lib-pro": {
+      "root": "libs/aqua-lib-pro",
+      "sourceRoot": "libs/aqua-lib-pro/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": { "lintFilePatterns": ["libs/aqua-lib-pro/**/*.ts"] }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/aqua-lib-pro"],
           "options": {
-            "lintFilePatterns": [
-              "apps/aqua-lib-e2e/**/*.{js,ts}"
-            ]
+            "jestConfig": "libs/aqua-lib-pro/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "aqua-lib-pro-2": {
+      "root": "libs/aqua-lib-pro-2",
+      "sourceRoot": "libs/aqua-lib-pro-2/src",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/workspace:tsc",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/libs/aqua-lib-pro-2",
+            "main": "libs/aqua-lib-pro-2/src/index.ts",
+            "tsConfig": "libs/aqua-lib-pro-2/tsconfig.lib.json",
+            "assets": ["libs/aqua-lib-pro-2/*.md"]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": { "lintFilePatterns": ["libs/aqua-lib-pro-2/**/*.ts"] }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/aqua-lib-pro-2"],
+          "options": {
+            "jestConfig": "libs/aqua-lib-pro-2/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }

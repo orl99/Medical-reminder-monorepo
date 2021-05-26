@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@orly/aqua-lib": ["libs/aqua-lib/src/index.ts"]
+      "@orly/aqua-lib": ["libs/aqua-lib/src/index.ts"],
+      "@orly/aqua-lib-pro": ["libs/aqua-lib-pro/src/index.ts"],
+      "@aqua-lib-pro": ["libs/aqua-lib-pro-2/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
